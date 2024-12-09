@@ -13,6 +13,10 @@ dotenv. config();
 const app = express();
 connectDB()
 
+app.get('/', (req, res) => {
+  res.json({ message: "Backend is running!" });
+});
+
 app.use(express.json());
 app.use("/api/user", userRoutes);
 app.use("/api/chat",chatRoutes);
